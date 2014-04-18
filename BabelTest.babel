@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Babel Obfuscator MSBuild Project File
+	Version 7.0.0.0	
+-->
+<Project DefaultTargets="BabelTest" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="Babel" AssemblyName="Babel.Build, Version=7.0.0.0, Culture=neutral, PublicKeyToken=138d17b5bd621ab7" />
+  <Target Name="BabelTest">
+    <PropertyGroup>
+      <BabelInputFile>BabelTest\bin\Debug\BabelTest.exe</BabelInputFile>
+      <BabelOutputFile>BabelTest.exe</BabelOutputFile>
+      <CleanAttributes>\[mscorlib\]System.Runtime.CompilerServices.CompilerGeneratedAttribute;\[mscorlib\]System.Diagnostics.DebuggerDisplayAttribute;\[mscorlib\]System.Diagnostics.DebuggerBrowsableAttribute;\[mscorlib\]System.Diagnostics.DebuggerNonUserCodeAttribute;\[mscorlib\]System.Diagnostics.DebuggerHiddenAttribute;\[mscorlib\]System.Diagnostics.DebuggerStepThroughAttribute;False</CleanAttributes>
+      <ConstRemoval>false</ConstRemoval>
+      <ControlFlowObfuscation>true;token=false;underflow=false;goto=true;if=false;switch=false;case=false;call=false;value=false</ControlFlowObfuscation>
+      <CopyAttributes>True</CopyAttributes>
+      <DeadCodeElimination>False</DeadCodeElimination>
+      <DynamicProxy>None</DynamicProxy>
+      <EmitInvalidOpcodes>false</EmitInvalidOpcodes>
+      <EnableObfuscationAgent>true</EnableObfuscationAgent>
+      <EnumRemoval>false</EnumRemoval>
+      <FlattenNamespaces>True</FlattenNamespaces>
+      <GenerateDebug>false</GenerateDebug>
+      <GenerateLogFile>false</GenerateLogFile>
+      <GenerateMapOutFile>false</GenerateMapOutFile>
+      <ILIterations>3</ILIterations>
+      <Instrument>false</Instrument>
+      <InstrumentEmptyMethods>true</InstrumentEmptyMethods>
+      <Internalize>false</Internalize>
+      <MsilEncryption>False</MsilEncryption>
+      <ObfuscateEvents>true</ObfuscateEvents>
+      <ObfuscateFields>true</ObfuscateFields>
+      <ObfuscateMethods>true</ObfuscateMethods>
+      <ObfuscateProperties>true</ObfuscateProperties>
+      <ObfuscateTypes>true</ObfuscateTypes>
+      <ObfuscateXaml>false</ObfuscateXaml>
+      <OverloadedRenaming>false</OverloadedRenaming>
+      <ResourceEncryption>false</ResourceEncryption>
+      <SealClasses>false</SealClasses>
+      <SearchSatelliteAssemblies>true</SearchSatelliteAssemblies>
+      <ShowLogo>true</ShowLogo>
+      <ShowStatistics>true</ShowStatistics>
+      <SkipFile>System\..%2A;Microsoft\..%2A</SkipFile>
+      <StringEncryption>True</StringEncryption>
+      <SuppressIldasm>true</SuppressIldasm>
+      <SuppressReflection>false</SuppressReflection>
+      <UnicodeNormalization>True</UnicodeNormalization>
+      <ValueEncryption>false</ValueEncryption>
+      <VerboseLevel>1</VerboseLevel>
+      <VirtualFunctions>true</VirtualFunctions>
+      <XmlRules>
+        <Rules targetAssembly="BabelTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Rule name="Internalize renamed symbols" feature="renaming" exclude="false">
+            <Pattern>*</Pattern>
+            <Properties>
+              <Internalize>true</Internalize>
+            </Properties>
+          </Rule>
+        </Rules>
+      </XmlRules>
+    </PropertyGroup>
+    <Message Text="Obfuscating $(BabelInputFile)..." />
+    <Babel InputFile="$(BabelInputFile)" OutputFile="$(BabelOutputFile)" SearchSatelliteAssemblies="$(SearchSatelliteAssemblies)" XmlRules="$(XmlRules)" GenerateMapOutFile="$(GenerateMapOutFile)" SkipFiles="$(SkipFile)" GenerateLogFile="$(GenerateLogFile)" ShowLogo="$(ShowLogo)" Internalize="$(Internalize)" CopyAttributes="$(CopyAttributes)" EnableObfuscationAgent="$(EnableObfuscationAgent)" FlattenNamespaces="$(FlattenNamespaces)" UnicodeNormalization="$(UnicodeNormalization)" ObfuscateTypes="$(ObfuscateTypes)" ObfuscateEvents="$(ObfuscateEvents)" ObfuscateMethods="$(ObfuscateMethods)" ObfuscateProperties="$(ObfuscateProperties)" ObfuscateFields="$(ObfuscateFields)" ObfuscateXaml="$(ObfuscateXaml)" VirtualFunctions="$(VirtualFunctions)" OverloadedRenaming="$(OverloadedRenaming)" ControlFlowObfuscation="$(ControlFlowObfuscation)" ILIterations="$(ILIterations)" EmitInvalidOpcodes="$(EmitInvalidOpcodes)" StringEncryption="$(StringEncryption)" ValueEncryption="$(ValueEncryption)" MsilEncryption="$(MsilEncryption)" DynamicProxy="$(DynamicProxy)" ResourceEncryption="$(ResourceEncryption)" SuppressIldasm="$(SuppressIldasm)" SuppressReflection="$(SuppressReflection)" Instrument="$(Instrument)" InstrumentEmptyMethods="$(InstrumentEmptyMethods)" SealClasses="$(SealClasses)" CleanAttributes="$(CleanAttributes)" EnumRemoval="$(EnumRemoval)" ConstRemoval="$(ConstRemoval)" DeadCodeElimination="$(DeadCodeElimination)" GenerateDebug="$(GenerateDebug)" VerboseLevel="$(VerboseLevel)" ShowStatistics="$(ShowStatistics)" />
+  </Target>
+</Project>
