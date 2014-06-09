@@ -1,6 +1,8 @@
 BabelTest
 =========
 
+<font color='red'>**This bug was fixed in the Babel 7.2.0.0!**</font>
+
 ### Code
 
 ```c#
